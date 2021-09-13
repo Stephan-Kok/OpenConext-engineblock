@@ -70,7 +70,7 @@ class AttributeReleasePolicyTypeTest extends TestCase
      * @group EngineBlockBundle
      * @group Doctrine
      */
-    public function AttributeReleasePolicy_converted_to_json()
+    public function attribute_release_policy_converted_to_json()
     {
         $arpType = Type::getType(AttributeReleasePolicyType::NAME);
         $arp = array();

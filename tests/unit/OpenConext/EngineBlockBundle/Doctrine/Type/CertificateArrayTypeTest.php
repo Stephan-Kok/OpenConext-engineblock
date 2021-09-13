@@ -73,7 +73,7 @@ class CertificateArrayTypeTest extends TestCase
      * @group EngineBlockBundle
      * @group Doctrine
      */
-    public function CertificateArrayType_converted_to_json()
+    public function certificate_array_type_converted_to_json()
     {
         $certType = Type::getType(CertificateArrayType::NAME);
         $certificateArray = [new X509CertificateLazyProxy(new X509CertificateFactory(), $this->certData)];

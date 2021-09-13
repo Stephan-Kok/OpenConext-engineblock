@@ -70,11 +70,11 @@ class ServiceArrayTypeTest extends TestCase
      * @group EngineBlockBundle
      * @group Doctrine
      */
-    public function ServiceArrayType_converted_to_json()
+    public function service_array_type_converted_to_json()
     {
-        $ServiceArrayType = Type::getType(ServiceArrayType::NAME);
+        $serviceArrayType = Type::getType(ServiceArrayType::NAME);
         $serviceArray = [new Service("location", "binding")];
-        $value = $ServiceArrayType->convertToDatabaseValue($serviceArray, $this->platform);
+        $value = $serviceArrayType->convertToDatabaseValue($serviceArray, $this->platform);
 
         $this->assertEquals(json_encode($serviceArray), $value);
     }
@@ -86,9 +86,9 @@ class ServiceArrayTypeTest extends TestCase
      */
     public function a_null_value_is_converted_to_null()
     {
-        $ServiceArrayType = Type::getType(ServiceArrayType::NAME);
+        $serviceArrayType = Type::getType(ServiceArrayType::NAME);
 
-        $value = $ServiceArrayType->convertToPHPValue(null, $this->platform);
+        $value = $serviceArrayType->convertToPHPValue(null, $this->platform);
 
         $this->assertNull($value);
     }
@@ -100,10 +100,10 @@ class ServiceArrayTypeTest extends TestCase
      */
     public function saved_object_equals_result()
     {
-        $ServiceArrayType = Type::getType(ServiceArrayType::NAME);
+        $serviceArrayType = Type::getType(ServiceArrayType::NAME);
         $serviceArray = [new Service("location", "binding")];
 
-        $value = $ServiceArrayType->convertToPHPValue($ServiceArrayType->convertToDatabaseValue($serviceArray, $this->platform),
+        $value = $serviceArrayType->convertToPHPValue($serviceArrayType->convertToDatabaseValue($serviceArray, $this->platform),
             $this->platform);
 
         $this->assertEquals($serviceArray, $value);
@@ -116,10 +116,10 @@ class ServiceArrayTypeTest extends TestCase
      */
     public function an_invalid_php_value_causes_an_exception_upon_conversion()
     {
-        $ServiceArrayType = Type::getType(ServiceArrayType::NAME);
+        $serviceArrayType = Type::getType(ServiceArrayType::NAME);
 
         $this->expectException(ConversionException::class);
-        $ServiceArrayType->convertToDatabaseValue(false, $this->platform);
+        $serviceArrayType->convertToDatabaseValue(false, $this->platform);
     }
 
     /**
@@ -129,9 +129,9 @@ class ServiceArrayTypeTest extends TestCase
      */
     public function an_invalid_database_value_causes_an_exception_upon_conversion()
     {
-        $ServiceArrayType = Type::getType(ServiceArrayType::NAME);
+        $serviceArrayType = Type::getType(ServiceArrayType::NAME);
 
         $this->expectException(ConversionException::class);
-        $ServiceArrayType->convertToPHPValue(false, $this->platform);
+        $serviceArrayType->convertToPHPValue(false, $this->platform);
     }
 }

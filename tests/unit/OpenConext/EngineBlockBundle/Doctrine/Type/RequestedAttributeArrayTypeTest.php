@@ -70,7 +70,7 @@ class RequestedAttributeArrayTypeTest extends TestCase
      * @group EngineBlockBundle
      * @group Doctrine
      */
-    public function RequestedAttributeArrayType_converted_to_json()
+    public function requested_attribute_array_type_converted_to_json()
     {
         $requestedAttributeArrayType = Type::getType(RequestedAttributeArrayType::NAME);
         $requestedAttribute = [new RequestedAttribute("name")];

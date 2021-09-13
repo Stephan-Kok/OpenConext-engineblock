@@ -70,7 +70,7 @@ class IndexedServiceArrayTypeTest extends TestCase
      * @group EngineBlockBundle
      * @group Doctrine
      */
-    public function IndexedServiceArrayType_converted_to_json()
+    public function indexed_service_array_type_converted_to_json()
     {
         $indexedServiceArrayType = Type::getType(IndexedServiceArrayType::NAME);
         $serviceIndex = [new IndexedService("location", "binding", 0)];

@@ -70,7 +70,7 @@ class ShibMdScopeArrayTypeTest extends TestCase
      * @group EngineBlockBundle
      * @group Doctrine
      */
-    public function ShibMdScopeArrayType_converted_to_json()
+    public function shib_md_scope_array_type_converted_to_json()
     {
         $shibMdScopeArrayType = Type::getType(ShibMdScopeArrayType::NAME);
         $shibMdScopeArray = [new ShibMdScope()];

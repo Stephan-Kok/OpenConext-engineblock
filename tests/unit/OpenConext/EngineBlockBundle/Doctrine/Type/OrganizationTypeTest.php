@@ -70,7 +70,7 @@ class OrganizationTypeTest extends TestCase
      * @group EngineBlockBundle
      * @group Doctrine
      */
-    public function OrganizationType_converted_to_json()
+    public function organization_type_converted_to_json()
     {
         $organizationType = Type::getType(OrganizationType::NAME);
         $organization = new Organization("name", "displayName", "url");

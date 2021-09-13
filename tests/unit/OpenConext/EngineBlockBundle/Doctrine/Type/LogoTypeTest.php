@@ -70,7 +70,7 @@ class LogoTypeTest extends TestCase
      * @group EngineBlockBundle
      * @group Doctrine
      */
-    public function LogoType_converted_to_json()
+    public function logo_type_converted_to_json()
     {
         $logoType = Type::getType(LogoType::NAME);
         $logo = new Logo("location");

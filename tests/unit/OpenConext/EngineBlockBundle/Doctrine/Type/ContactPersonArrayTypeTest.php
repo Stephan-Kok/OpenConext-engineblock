@@ -69,7 +69,7 @@ class ContactPersonArrayTypeTest extends TestCase
      * @group EngineBlockBundle
      * @group Doctrine
      */
-    public function ContactPersonArrayType_converted_to_json()
+    public function contact_person_array_type_converted_to_json()
     {
         $contactPersonType = Type::getType(ContactPersonArrayType::NAME);
         $contactPerson = [new ContactPerson("support")];
