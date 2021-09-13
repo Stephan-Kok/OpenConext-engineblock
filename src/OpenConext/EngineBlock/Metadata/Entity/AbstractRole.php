@@ -155,28 +155,28 @@ abstract class AbstractRole
     /**
      * @var Logo
      *
-     * @ORM\Column(name="logo", type="object")
+     * @ORM\Column(name="logo", type="engineblock_logo", nullable=true)
      */
     public $logo;
 
     /**
      * @var Organization
      *
-     * @ORM\Column(name="organization_nl_name",type="object", nullable=true)
+     * @ORM\Column(name="organization_nl_name",type="engineblock_organization", nullable=true)
      */
     public $organizationNl;
 
     /**
      * @var Organization
      *
-     * @ORM\Column(name="organization_en_name",type="object", nullable=true)
+     * @ORM\Column(name="organization_en_name",type="engineblock_organization", nullable=true)
      */
     public $organizationEn;
 
     /**
      * @var Organization
      *
-     * @ORM\Column(name="organization_pt_name",type="object", nullable=true)
+     * @ORM\Column(name="organization_pt_name",type="engineblock_organization", nullable=true)
      */
     public $organizationPt;
 
@@ -204,7 +204,7 @@ abstract class AbstractRole
     /**
      * @var X509Certificate[]
      *
-     * @ORM\Column(name="certificates", type="array")
+     * @ORM\Column(name="certificates", type="engineblock_certificate_array")
      */
     public $certificates = array();
 
@@ -218,7 +218,7 @@ abstract class AbstractRole
     /**
      * @var ContactPerson[]
      *
-     * @ORM\Column(name="contact_persons", type="array")
+     * @ORM\Column(name="contact_persons", type="engineblock_contact_person_array")
      */
     public $contactPersons;
 
@@ -232,14 +232,14 @@ abstract class AbstractRole
     /**
      * @var string[]
      *
-     * @ORM\Column(name="name_id_formats", type="array")
+     * @ORM\Column(name="name_id_formats", type="json", nullable=true)
      */
     public $supportedNameIdFormats;
 
     /**
      * @var Service
      *
-     * @ORM\Column(name="single_logout_service", type="object", nullable=true)
+     * @ORM\Column(name="single_logout_service", type="engineblock_service", nullable=true)
      */
     public $singleLogoutService;
 
