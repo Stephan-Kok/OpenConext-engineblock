@@ -34,6 +34,11 @@ use RobRichards\XMLSecLibs\XMLSecurityKey;
 use SAML2\Constants;
 
 /**
+ * This class has been added to temporary push to both sso_provider_roles_eb5
+ * and sso_provider_roles_eb6
+ *
+ * TODO: Remove this code after sso_provider_roles_eb5 has been faced out
+ *
  * @package OpenConext\EngineBlock\Metadata\Entity
  * @ORM\Entity
  * @SuppressWarnings(PHPMD.TooManyMethods)
@@ -44,26 +49,26 @@ use SAML2\Constants;
  * WARNING: Please don't use this entity directly but use the dedicated factory instead.
  * @see \OpenConext\EngineBlock\Factory\Factory\ServiceProviderFactory
  */
-class ServiceProvider extends AbstractRole
+class ServiceProviderEb6 extends AbstractRoleEb6
 {
     /**
      * @var null|AttributeReleasePolicy
      *
-     * @ORM\Column(name="attribute_release_policy", type="array")
+     * @ORM\Column(name="attribute_release_policy", type="engineblock_attribute_release_policy", nullable=true)
      */
     public $attributeReleasePolicy;
 
     /**
      * @var IndexedService[]
      *
-     * @ORM\Column(name="assertion_consumer_services", type="array")
+     * @ORM\Column(name="assertion_consumer_services", type="engineblock_indexed_service_array")
      */
     public $assertionConsumerServices;
 
     /**
-     * @var string[]
+     * @var null|string[]
      *
-     * @ORM\Column(name="allowed_idp_entity_ids", type="array")
+     * @ORM\Column(name="allowed_idp_entity_ids", type="json", nullable=true)
      */
     public $allowedIdpEntityIds;
 
@@ -77,7 +82,7 @@ class ServiceProvider extends AbstractRole
     /**
      * @var null|RequestedAttribute[]
      *
-     * @ORM\Column(name="requested_attributes", type="array")
+     * @ORM\Column(name="requested_attributes", type="engineblock_requested_attribute_array", nullable=true)
      */
     public $requestedAttributes;
 
